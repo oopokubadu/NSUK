@@ -23,8 +23,8 @@ const Home = () => {
               </p>
 
               <a
-                href="#"
-                title=""
+                href="mailto:info@nsano-uk.com"
+               
                 className="inline-flex items-center rounded-full  justify-center px-8 py-4 font-semibold text-white transition-all duration-200 bg-[#f09020] mt-9"
                 role="button"
               >
