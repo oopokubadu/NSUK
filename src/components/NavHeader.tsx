@@ -17,7 +17,7 @@ const NavHeader = () => {
             >
               <img className="w-32" src={Logo} alt="" />
             </a>
-            <div className="">
+            <a href="#footer">
               <button
                 type="button"
                 className="  flex justify-center items-center gap-x-2 py-2 px-3 font-semibold rounded-full border-2 border-[#4d4d4d] text-[#4d4d4d]"
@@ -25,7 +25,7 @@ const NavHeader = () => {
                 <img src={Phone} alt="" />
                 <p>Contact Us</p>
               </button>
-            </div>
+            </a>
           </div>
         </nav>
       </header>

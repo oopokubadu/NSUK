@@ -4,4 +4,12 @@
 
 * {
     font-family: "Onest", sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+.bhank {
+    font-family: 'Bhank';
+    font-weight: bold;
+    font-style: normal;
 }

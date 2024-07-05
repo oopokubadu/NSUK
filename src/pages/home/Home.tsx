@@ -8,18 +8,26 @@ const Home = () => {
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-[85rem]">
           <div className="flex items-center flex-col-reverse  gap-y-12 lg:flex-row lg:gap-x-24">
             <div>
-              <img className="w-full mx-auto max-w-xs md:max-w-md" src={Globe} alt="" />
+              <img
+                className="w-full mx-auto max-w-xs md:max-w-md"
+                src={Globe}
+                alt=""
+              />
             </div>
 
             <div className="text-center lg:text-left lg:max-w-2xl">
-              <h2 className="text-4xl font-bold leading-tight text-black  lg:text-5xl">
-                <span className="text-[#F09020]">Nsano UK</span> is your gateway
-                to Africa.
+              <h2 className="text-4xl font-bold bhank leading-tight text-[#4d4d4d]  lg:text-6xl">
+                <span className="text-[#F09020] bhank">Nsano UK</span> is your
+                gateway to Africa.
               </h2>
-              <p className="mt-6 text-base text-gray-600">
+              <p className="mt-6 text-base text-[#6C757D]">
                 We provide expert management advise for your enterprise. Learn
                 how to succeed in Africa. Africa isn’t one country. It’s made up
-                of 54 different countries. We make you understand Africa. 
+                of 54 different countries.
+                <span className="font-bold">
+                  {" "}
+                  We make you understand Africa. 
+                </span>
               </p>
 
               <a

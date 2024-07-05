@@ -3,7 +3,7 @@ import { Logo2 } from "../assets";
 
 const Footer = () => {
   return (
-    <div className="bg-[#d9d9d9]">
+    <div id="footer" className="bg-[#d9d9d9] bg-opacity-50">
       <div className="text-center mx-auto text-base py-8">
         <p>Post code: SW16 3PH</p>
         <p>443 Streatham road London,</p>
