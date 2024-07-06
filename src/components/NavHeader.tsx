@@ -1,36 +1,95 @@
-import React from "react";
-import { Logo, Phone } from "../assets";
+import { useState } from "react";
+import { Location, Logo } from "../assets";
 
-const NavHeader = () => {
+export const NavHeader = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div>
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-[#f9f9f9] text-sm py-3">
-        <nav
-          className="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
-          aria-label="Global"
-        >
-          <div className="flex items-center w-full justify-between">
-            <a
-              className="flex-none text-xl font-semibold text-white"
-              href="/"
-              aria-label="Nsano Uk"
-            >
-              <img className="w-32" src={Logo} alt="" />
-            </a>
-            <a href="#footer">
-              <button
-                type="button"
-                className="  flex justify-center items-center gap-x-2 py-2 px-3 font-semibold rounded-full border-2 border-[#4d4d4d] text-[#4d4d4d]"
+    <div className="fixed top-0 w-full left-0   mx-auto bg-white">
+      <div className="w-full  px-4 py-5 mx-auto  lg:max-w-[85rem] md:px-24 lg:px-8 z-50">
+        <div className="relative flex items-center justify-between">
+          <a
+            href="/"
+            aria-label="Company"
+            title="Company"
+            className="inline-flex items-center"
+          >
+            <img className="w-32" src={Logo} alt="" />
+          </a>
+          <ul className=" items-center hidden space-x-8 lg:flex">
+            <li>
+              <a
+                href="#location"
+                className="inline-flex items-center justify-center h-10 px-4 py-0 text-base font-semibold text-center text-[#4d4d4d] no-underline align-middle transition-all duration-300 ease-in-out bg-transparent border-2 border-gray-600 border-solid rounded-full cursor-pointer select-none"
               >
-                <img src={Phone} alt="" />
-                <p>Contact Us</p>
-              </button>
-            </a>
+                <img className="w-6" src={Location} alt="" />
+                Contact Us
+              </a>
+            </li>
+          </ul>
+          <div className="lg:hidden">
+            <button
+              aria-label="Open Menu"
+              title="Open Menu"
+              className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
+              onClick={() => setIsMenuOpen(true)}
+            >
+              <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
+                />
+              </svg>
+            </button>
+            {isMenuOpen && (
+              <div className="absolute top-0 left-0 w-full">
+                <div className="p-5 bg-white border rounded shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <button
+                        aria-label="Close Menu"
+                        title="Close Menu"
+                        className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+                          <path
+                            fill="currentColor"
+                            d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <nav>
+                    <ul className="space-y-4">
+                      <li>
+                        <a
+                          href="#location"
+                          className="inline-flex items-center justify-center w-full h-12 px-6 border-2 font-medium tracking-wide text-[#4d4d4d] transition duration-200 rounded-full bg-transparent focus:shadow-outline focus:outline-none"
+                          aria-label="Sign up"
+                          title="Sign up"
+                        >
+                          <img className="w-6" src={Location} alt="" />
+                          Contact Us
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            )}
           </div>
-        </nav>
-      </header>
+        </div>
+      </div>
     </div>
   );
 };
-
-export default NavHeader;
