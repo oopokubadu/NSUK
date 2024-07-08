@@ -6,11 +6,11 @@ import Home from "../pages/home/Home";
 const AppRouter = () => {
   return (
     <Routes>
-    <Route path="/" element={<MainLayout />}>
-      <Route index element={<Home />} />
-    </Route>
-    <Route path="*" element={<Navigate replace to="/" />} />
-  </Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Navigate replace to="home" />} />
+        <Route path="home" element={<Home />} />
+      </Route>
+    </Routes>
   );
 };
 
